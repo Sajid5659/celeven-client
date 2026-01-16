@@ -41,7 +41,34 @@ const Navbar = () => {
     return (
         <div>
             <div className='shadow-sm bg-white fixed top-0 z-100 w-full'>
-                <div className="navbar max-w-[90%] mx-auto">
+                <div className="navbar max-w-[90%] mx-auto ">
+                    <Link to="/" className="flex items-center gap-2">
+                        <motion.img
+                            src="/src/assets/logo.PNG"
+                            alt="CEleven Logo"
+                            className="w-12 h-12 object-contain rounded-3xl"
+                            initial={{ opacity: 0, y: -8, scale: 0.9 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: "easeOut"
+                            }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                        />
+
+                        <motion.span
+                            className="text-xl font-bold tracking-wide text-gray-800"
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2, duration: 0.4 }}
+                        >
+                            CElevenBd
+                        </motion.span>
+                    </Link>
+
+
+
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,9 +83,10 @@ const Navbar = () => {
                             </ul>
                         </div>
                         <div>
-                            <img className='w-24'  alt="" />
+                            <img className='w-24' alt="" />
                         </div>
                     </div>
+
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             {links}
